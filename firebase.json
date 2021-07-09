@@ -9,7 +9,7 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "/pages/PaymentMethodACC-0.html"
+        "destination": "/index.html"
       }
     ]
   }
