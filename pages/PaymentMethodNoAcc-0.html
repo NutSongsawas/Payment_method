@@ -11,6 +11,29 @@
   <link rel="stylesheet" href="../styles/common.fba248c080b2aef1a454.css" />
   <link rel="stylesheet" href="../styles/RegularOrder___FullPaymentMember___PaymentMethod.22a4ac551ac45a3877ff.css" />
   <link rel="stylesheet" href="../styles/CustomPayment.css" />
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyDGLTtHf_T2PKxr6LJsiOohWEgUeTFGGNQ",
+      authDomain: "paymentmethodamway.firebaseapp.com",
+      projectId: "paymentmethodamway",
+      storageBucket: "paymentmethodamway.appspot.com",
+      messagingSenderId: "299493714443",
+      appId: "1:299493714443:web:c7d119320f4264ac9cb50e",
+      measurementId: "G-WYLTYJV519"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
   <style>
     .mz-bank-method-option__bank-image {
       width: 24px;
@@ -148,13 +171,13 @@
       margin: 0 0 10px 0;
     }
 
-     /* this is for show hide 0%plan */
+    /* this is for show hide 0%plan */
     .installmentprogram img {
       height: 3.3rem !important;
-    margin-top: .7rem;
-    display: block;
-    width: unset;
-    margin-left: 8px;
+      margin-top: .7rem;
+      display: block;
+      width: unset;
+      margin-left: 8px;
     }
 
     ul#installment0 {
@@ -186,22 +209,28 @@
       margin-bottom: 8px;
       margin-top: 8px;
     }
+
     header.mz-saved-credit-debit__add-card-section-header {
-    margin-bottom: 8px;
-}
-.installmentprogram img {
-    height: 3rem !important;
-    margin-top: .7rem;
-    display: block;
-    width: unset;
-    margin-left: 8px;
-}
-.installment-text { color: #A36A00;}
-.mz-checkable-input__content:before {
-    content: "";
-    display: block;
-    height: 16px;
-}
+      margin-bottom: 8px;
+    }
+
+    .installmentprogram img {
+      height: 3rem !important;
+      margin-top: .7rem;
+      display: block;
+      width: unset;
+      margin-left: 8px;
+    }
+
+    .installment-text {
+      color: #A36A00;
+    }
+
+    .mz-checkable-input__content:before {
+      content: "";
+      display: block;
+      height: 16px;
+    }
   </style>
 </head>
 
@@ -942,7 +971,7 @@
             </header>
 
             <section class="mz-payment-layout__content ">
-                 <!-- installment -->
+              <!-- installment -->
               <div
                 class="mz-checkable-input mz-payment-method-option --regular-text --regular-padding --with-border installment-card">
                 <input type="radio" id="card-1" name="payment-method" value="card-1"
@@ -963,14 +992,15 @@
                           ผ่อนชำระผ่านบัตรเครดิต
                         </h6>
                         <p class="mz-payment-method-option__description">
-                          โปรโมชั่นผ่อน ดอกเบี้ย 0% 
+                          โปรโมชั่นผ่อน ดอกเบี้ย 0%
                         </p>
                       </div>
-                     
+
 
                       <div class="awm-img-pay-card-desk installmentprogram">
-                        <img class="mz-image mz-payment-method-option__label-image " src="../static/images/installment0.png"  alt="payment-0%"> 
-                        
+                        <img class="mz-image mz-payment-method-option__label-image "
+                          src="../static/images/installment0.png" alt="payment-0%">
+
                       </div>
 
                       <img class="mz-image mz-payment-method-option__label-image awm-img-pay-card-mb installmentprogram"
@@ -985,7 +1015,7 @@
 
                     <!-- start installment choose bank ***-->
                     <div class="mz-payment-method-option__content installment-card-1">
-                      <div class="mz-bank-method" >
+                      <div class="mz-bank-method">
                         <div class="mz-dropdown-modal dropdown">
                           <button type="button" class="mz-dropdown-modal__button" data-placeholder="เลือกธนาคาร"
                             data-placeholder="เลือกธนาคาร" data-toggle="dropdown" aria-haspopup="true"
@@ -1067,8 +1097,8 @@
                           </div>
                         </div>
                         <p class="mz-message --error mz-bank-method__error-message">
-             <small id="bank-error"></small>
-           </p>
+                          <small id="bank-error"></small>
+                        </p>
 
                         <p class="mz-message --error mz-bank-method__error-message">
                           <small id="recipient-mobile-error"></small>
@@ -1205,7 +1235,8 @@
 
 
 
-                          <p class="mz-message --default installment-text"><small>กรุณาชำระเงินโดยใช้บัตรเครดิตของคุณเอง เมื่อคลิกที่
+                          <p class="mz-message --default installment-text"><small>กรุณาชำระเงินโดยใช้บัตรเครดิตของคุณเอง
+                              เมื่อคลิกที่
                               "ชำระเงิน"
                               จะถือเป็นการยืนยันความเป็นเจ้าของบัตรเครดิตที่ใช้ทำการชำระภายใต้ข้อตกลงของแอมเวย์</small>
                           </p>
@@ -1224,8 +1255,8 @@
 
                 </div>
               </div>
-          
-            
+
+
               <div class="mz-payment-layout__footer">
                 <span>Secured by</span>
                 <img class="mz-image mz-payment-layout__2c2p" data-src="../static/images/2c2p.svg" alt="2c2p" />
@@ -1336,8 +1367,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-    crossorigin="anonymous"></script>
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+  </script>
   <script src="../v2/Common/js/global.js"></script>
   <script src="../v2/Common/js/DimLayer.js"></script>
   <script src="../v2/Common/js/Image.js"></script>
@@ -1378,7 +1409,7 @@
           $(this).addClass("active");
           $("#content-installment0 div.active").removeClass("active");
           $("#content-installment0 div:nth-child(" + nthChild + ")").addClass("active");
-        } 
+        }
       });
     });
   </script>
