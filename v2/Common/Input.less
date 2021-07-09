@@ -1,0 +1,52 @@
+@import './variables.less';
+@import '../Common/mixins.less';
+
+.mz-input {
+  position: relative;
+  width: 100%;
+
+  input,
+  textarea {
+    .mz-input-like();
+
+    &:read-only {
+      color: @colors[grey-400];
+    }
+  }
+
+  textarea {
+    height: @textarea-height;
+    padding-top: @spacing[xs] + @spacing[xxs];
+    padding-bottom: @spacing[xs] + @spacing[xxs];
+    resize: none;
+  }
+
+  &__icon {
+    .mz-input-like-icon();
+  }
+
+  &__clear-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: @spacing[l];
+    height: @input-height;
+    color: @colors[grey-300];
+    font-size: @icon-sizes[s];
+
+    &:hover {
+      @media (hover: hover) {
+        color: @colors[grey-400];
+      }
+    }
+
+    &:not(.--active) {
+      display: none;
+    }
+  }
+
+  input.--with-right-icon ~ &__clear-button {
+    // icon width
+    margin-right: @spacing[xl];
+  }
+}

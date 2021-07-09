@@ -1,0 +1,46 @@
+@import '../Common/variables.less';
+@import '../Common/mixins.less';
+
+.mz-error-notification {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: @colors[red-100];
+  color: @colors[red-200];
+
+  .mz-font-style(body);
+
+  &.--secondary {
+    background-color: @colors[orange-100];
+    color: @colors[orange-300];
+  }
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    min-height: @input-height;
+    padding: @spacing[xs] 0;
+
+    .mz-container();
+
+    @media screen and (min-width: @breakpoints[xl]) {
+      align-items: center;
+    }
+  }
+
+  &__info-icon {
+    flex: none;
+    margin-right: @spacing[xs];
+  }
+
+  &__message {
+    flex: 1;
+  }
+
+  &__close {
+    flex: none;
+    margin-left: @spacing[xs];
+    color: @colors[black];
+  }
+}

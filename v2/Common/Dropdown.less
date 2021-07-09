@@ -1,0 +1,57 @@
+@import './variables.less';
+@import './mixins.less';
+
+.mz-dropdown {
+  width: 100%;
+  user-select: none;
+
+  &__button {
+    .mz-dropdown-button();
+  }
+
+  &__button-text {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-align: left;
+  }
+
+  &__icon {
+    margin-left: @spacing[xs];
+    .mz-dropdown-icon();
+  }
+
+  &__button[aria-expanded='true'] &__icon {
+    transform: scaleY(-1);
+  }
+
+  &__menu.dropdown-menu {
+    width: auto;
+    min-width: auto;
+    .DEPRECATEDmz-dropdown-menu();
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+
+    .DEPRECATEDmz-dropdown-option();
+  }
+
+  &__option-image {
+    width: 32px;
+    height: 32px;
+    margin-right: @spacing[s];
+  }
+
+  &__text {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  h6 + & {
+    margin-top: @spacing[s];
+  }
+}

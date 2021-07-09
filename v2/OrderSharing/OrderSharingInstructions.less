@@ -1,0 +1,125 @@
+@import '../Common/variables.less';
+@import '../Common/mixins.less';
+
+.mz-order-sharing-instructions {
+  @method-image-height: 40px;
+
+  &__content {
+    &.--desktop {
+      display: none;
+    }
+
+    @media screen and (min-width: @breakpoints[xl]) {
+      display: none;
+
+      &.--desktop {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  h5 {
+    margin-bottom: @spacing[xs];
+
+    @media screen and (min-width: @breakpoints[xl]) {
+      .mz-font-style(heading-3, bold);
+    }
+  }
+
+  h6 {
+    margin-bottom: @spacing[xs];
+  }
+
+  ol {
+    padding-left: 0;
+  }
+
+  &__method-image {
+    height: @method-image-height;
+    margin-left: @spacing[xs];
+  }
+
+  &__methods {
+    &:not(:last-child) {
+      margin-bottom: @spacing[m];
+    }
+
+    & > li {
+      padding-bottom: @spacing[m];
+      border-bottom: 1px solid @colors[grey-200];
+    }
+  }
+
+  &__steps > li {
+    line-height: @method-image-height;
+  }
+
+  &__step-image {
+    width: 100%;
+  }
+
+  &__desktop-step {
+    @paragraph-line-height: 24px;
+    flex: 0 380px;
+
+    &:not(:last-child) {
+      padding-right: @spacing[m];
+    }
+
+    &.--step-2,
+    &.--step-3 {
+      p {
+        min-height: 3 * @paragraph-line-height;
+      }
+    }
+  }
+
+  &__desktop-step-image-container {
+    position: relative;
+    max-width: 350px;
+
+    &.--step-2 {
+      margin-bottom: 20%;
+    }
+  }
+
+  &__desktop-step-image {
+    width: 100%;
+    margin-top: @spacing[m];
+
+    &.--step-1 {
+      max-width: 259px;
+    }
+
+    &:not(.--step-1) {
+      box-shadow: @shadows[l];
+    }
+  }
+
+  &__share-instruction-hand {
+    position: absolute;
+    top: 97%;
+    left: -0.5%;
+    width: 26%;
+  }
+
+  &__highlight-box {
+    position: absolute;
+    border: 1px solid @colors[amway-400];
+
+    &.--step-2 {
+      top: 90.5%;
+      left: 23%;
+      width: 64%;
+      height: 11%;
+    }
+
+    &.--step-3 {
+      top: 30%;
+      left: 43%;
+      width: 60%;
+      height: 61%;
+    }
+  }
+}

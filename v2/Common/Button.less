@@ -1,0 +1,26 @@
+@import './variables.less';
+@import './mixins.less';
+
+.mz-button {
+  .mz-button-like-base();
+
+  each(@button-themes, {
+    &.--@{key}.--primary {
+      .mz-button-like-primary(@color-name: @key)
+    }
+
+    &.--@{key}.--secondary {
+      .mz-button-like-secondary(@color-name: @key)
+    }
+  });
+
+  each(@button-sizes, {
+    &.--@{key} {
+      .mz-button-like-size(@size-name: @key)
+    }
+
+    &.--@{key} &__icon {
+      .mz-button-like-icon(@size-name: @key)
+    }
+  });
+}

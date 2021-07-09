@@ -1,0 +1,151 @@
+@import '../Common/variables.less';
+@import '../Common/mixins.less';
+
+.mz-order-sharing {
+  @input-height: 40px;
+  .mz-container();
+  display: flex;
+  flex-direction: column;
+  padding: @spacing[s] @spacing[m] @spacing[xxxl];
+
+  &__image {
+    height: 200px;
+  }
+
+  &__title {
+    margin-top: @spacing[s];
+    text-align: center;
+
+    &.--desktop {
+      display: none;
+    }
+
+    @media screen and (min-width: @breakpoints[xl]) {
+      .mz-font-style(heading-3, bold);
+      display: none;
+
+      &.--desktop {
+        display: initial;
+      }
+    }
+  }
+
+  &__options {
+    display: flex;
+    justify-content: center;
+    margin: @spacing[m] 0 @spacing[s];
+  }
+
+  &__option {
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-right: @spacing[xxl];
+    }
+
+    > * {
+      display: block;
+
+      &:first-child {
+        margin-bottom: @spacing[xs];
+      }
+    }
+
+    @media screen and (min-width: @breakpoints[xl]) {
+      display: none;
+    }
+  }
+
+  &__separator {
+    display: flex;
+    align-items: center;
+    margin: @spacing[s] 0;
+
+    &:before,
+    &:after {
+      content: '';
+      flex: 1 1 auto;
+      height: 1px;
+      background: @colors[grey-200];
+    }
+
+    &:before {
+      margin-right: @spacing[xs];
+    }
+
+    &:after {
+      margin-left: @spacing[xs];
+    }
+
+    @media screen and (min-width: @breakpoints[xl]) {
+      display: none;
+    }
+  }
+
+  &__input-group {
+    position: relative;
+
+    input {
+      height: @input-height;
+      overflow: hidden;
+      border: 0;
+      border-radius: @border-radiuses[s];
+      background: @colors[amway-100];
+      line-height: @input-height;
+      text-overflow: ellipsis;
+
+      &:read-only {
+        color: @colors[amway-300];
+      }
+    }
+
+    @media screen and (min-width: @breakpoints[md]) {
+      width: 380px;
+      margin: 0 auto;
+    }
+  }
+
+  &__button-group {
+    margin-top: @spacing[s];
+
+    button {
+      margin: 0 auto;
+      @media screen and (min-width: @breakpoints[md]) {
+        max-width: 196px;
+      }
+    }
+
+    #copy-tooltip {
+      right: 50%;
+      transform: translate(50%, -100%);
+    }
+  }
+
+  &__link-icon {
+    color: @colors[amway-300];
+    font-size: @icon-sizes[s];
+    line-height: @input-height;
+  }
+
+  &__action-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: @spacing[m];
+
+    a {
+      .mz-link(@colors[purple-300]);
+    }
+  }
+
+  hr {
+    width: 100%;
+    margin: @spacing[xl] 0 @spacing[s];
+    border-color: @colors[grey-200];
+
+    // spec rule between methods
+  }
+
+  @media screen and (min-width: @breakpoints[xl]) {
+    padding-top: @spacing[xxl];
+  }
+}

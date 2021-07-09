@@ -1,0 +1,39 @@
+@import '../Common/variables.less';
+@import '../Common/mixins.less';
+
+.mz-upselling {
+  padding: @spacing[m] 0 @spacing[s];
+  overflow: visible;
+
+  .mz-container();
+
+  &__title {
+    margin-bottom: @spacing[s];
+    text-align: center;
+  }
+
+  &__list {
+    @zero: 0px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    // remove default white space between items
+    font-size: @zero;
+    white-space: nowrap;
+
+    > * {
+      vertical-align: top;
+      .mz-font-style(body);
+    }
+  }
+
+  @media screen and (min-width: @cart-desktop-breakpoint) {
+    padding-top: @spacing[xl];
+    padding-bottom: @spacing[xxxxl];
+
+    &__title {
+      margin-bottom: @spacing[xl];
+
+      .mz-font-style(heading-3, bold);
+    }
+  }
+}

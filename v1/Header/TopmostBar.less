@@ -1,0 +1,74 @@
+@import '../Common/variables.less';
+@import '../Common/mixins.less';
+
+.oa-topmost-bar {
+  position: relative;
+  height: @topmost-bar-mobile-height;
+  transition: transform 0.2s linear;
+  background: @colors[grey-100];
+
+  &.--scrolled {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .oa-container(@side-spacing: @spacing[s]);
+  }
+
+  & &__language-switcher {
+    display: none;
+  }
+
+  &__delivery-methods {
+    max-width: 100%;
+  }
+
+  &__links {
+    display: none;
+    margin-left: auto;
+  }
+
+  &__link {
+    margin-left: @spacing[l];
+    color: @colors[white];
+
+    &.--outstanding small {
+      font-weight: @font-weights[bold];
+    }
+
+    a:hover {
+      color: @colors[amway-300];
+    }
+  }
+
+  @media screen and (min-width: @breakpoints[xl]) {
+    position: static;
+    height: @topmost-bar-desktop-height;
+    transition: none;
+    background: @colors[amway-600];
+
+    &.--scrolled {
+      transform: none;
+    }
+
+    &__delivery-methods {
+      flex: 1 1 auto;
+      min-width: 0;
+      color: @colors[white];
+    }
+
+    &__links,
+    & &__language-switcher {
+      display: flex;
+      flex: none;
+    }
+
+    &__language-switcher {
+      width: @logo-desktop-width + @logo-desktop-margin-right;
+    }
+  }
+}

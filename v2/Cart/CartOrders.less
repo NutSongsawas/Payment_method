@@ -1,0 +1,20 @@
+@import '../Common/variables.less';
+@import '../Common/mixins.less';
+
+.mz-cart-orders {
+  &__header {
+    margin: @spacing[s] @spacing[s] @spacing[xs];
+
+    @media screen and (min-width: @cart-tablet-breakpoint) {
+      margin: @spacing[s] 0 @spacing[xs];
+    }
+
+    @media screen and (min-width: @cart-desktop-breakpoint) {
+      margin-left: 0;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: @spacing[xxs];
+  }
+}

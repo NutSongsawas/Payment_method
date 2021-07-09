@@ -1,0 +1,148 @@
+/* stylelint-disable unknown-word */
+@import '../Common/variables.less';
+@import '../Common/mixins.less';
+
+.mz-bank-method-option {
+  @side-padding: @spacing[s];
+  @image-size: @icon-sizes[l];
+  @image-margin-right: @spacing[xs] + @spacing[xxs];
+  position: relative;
+
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: @border-radiuses[s];
+
+  input {
+    .mz-hidden-input;
+  }
+
+  &__bank-toggle {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: @spacing[xs] + @spacing[xxs] @side-padding;
+    transition: color 0.3s, background-color 0.3s;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      left: -1px;
+      transition: border-color 0.3s, border-radius 0.3s;
+      border: 1px solid @colors[grey-200];
+      border-radius: @border-radiuses[s];
+      pointer-events: none;
+    }
+  }
+
+  input:checked ~ &__bank-toggle {
+    color: @colors[white];
+  }
+
+  &__bank-image {
+    width: @image-size;
+    height: @image-size;
+    margin-right: @image-margin-right;
+    border-radius: @border-radiuses[s];
+  }
+
+  &__content-title {
+    padding: @spacing[xs] + @spacing[xxs] @spacing[s] @spacing[xxs];
+    font-weight: @font-weights[bold];
+  }
+
+  &__content-title.--desktop {
+    display: none;
+    margin-left: auto;
+    padding: 0;
+    color: @colors[white];
+  }
+
+  &__method-button-container {
+    .DEPRECATEDmz-dropdown-option();
+  }
+
+  &__method-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  &__app-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: @spacing[xs];
+    border-radius: @border-radiuses[s];
+  }
+
+  &__method-icon {
+    visibility: hidden;
+    margin-left: auto;
+    color: @colors[original-blue];
+    font-size: @icon-sizes[m];
+  }
+
+  input:checked + &__method-button &__method-icon {
+    visibility: visible;
+  }
+
+  each(@bank-colors, {
+    &.--@{key} input:checked ~ &__bank-toggle {
+      background: @value;
+
+      &:after {
+        border-color: @value;
+        border-bottom-right-radius: @border-radiuses[s];
+        border-bottom-left-radius: @border-radiuses[s];
+      }
+    }
+
+    &.--@{key} &__bank-toggle:hover {
+      @media (hover: hover) {
+        background: @value;
+        color: @colors[white];
+
+        &:after {
+          border-color: @value;
+        }
+      }
+    }
+
+    &.--@{key} &__bank-toggle:hover &__content-title {
+      @media (hover: hover) {
+        display: block
+      }
+    }
+  });
+
+  @media screen and (min-width: @breakpoints[md]) {
+    &__bank-toggle {
+      &:after {
+        border-radius: 0;
+        border-color: transparent;
+      }
+    }
+
+    &__content-title {
+      display: none;
+    }
+
+    input:checked ~ &__bank-toggle &__content-title.--desktop {
+      display: block;
+    }
+
+    &__method-button-container {
+      @left-pading: @side-padding + @image-size + @image-margin-right;
+
+      padding-left: @left-pading;
+
+      &:after {
+        left: @left-pading;
+      }
+    }
+  }
+}

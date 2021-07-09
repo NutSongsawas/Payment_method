@@ -1,0 +1,13 @@
+@import './variables.less';
+@import '../Common/mixins.less';
+
+// TODO: Remove this component
+.mz-link {
+  &:not(.--bold) {
+    .mz-link();
+  }
+
+  &.--bold {
+    .mz-link(@font-weight: bold);
+  }
+}

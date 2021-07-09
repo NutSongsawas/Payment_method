@@ -1,0 +1,69 @@
+.mz-saved-credit-debit pre {
+  overflow: hidden;
+}
+.amway-card .description-amway-card{
+  font-size: 16px !important;
+  font-weight: 700;
+  background:#fff1e8;
+  color:#a76c47;
+  padding: .5rem 1.5rem;
+  margin-bottom: 8px;
+}
+.amway-card .mz-checkable-input__content:before{
+  height: 8px !important;
+}
+.amway-card .mz-image.mz-payment-method-option__label-image {
+  height: 3rem !important;
+  margin-top: .7rem;
+  display: block;
+  width: unset;
+  margin-left: 8px;
+}
+.amway-card .mz-dropdown-modal__button .mz-saved-credit-debit__option-image {
+  margin-right: 1.5rem;
+}
+.mz-input__input:focus {
+  background-color: #eee;
+  border-color: #002f5f !important;
+} 
+.mz-input input.--has-error:focus {
+   border-color: #cb5454 !important;
+}
+.mz-error small.--has-error{
+  background: rgba(255, 0, 0, 0.09);
+}
+.show-awm-no-acc {
+  display: block !important;
+}
+.amway-card .awm-mt-2 {
+  margin-top: 2.2rem;
+}
+.mz-button.--original-blue.--primary:not(:disabled) {
+  background: #2c2c2c !important;
+  color: #fff;
+}
+.mz-checkable-input__container:hover>.mz-checkable-input__label>.mz-checkable-input__icon, .mz-checkable-input__input:checked+.mz-checkable-input__container>.mz-checkable-input__label>.mz-checkable-input__icon {
+  color: #2c2c2c !important;
+}
+.mz-checkable-input.--with-border>.mz-checkable-input__input:checked:not(:disabled)+.mz-checkable-input__container {
+  border-color: #2c2c2c !important;
+}
+.mz-checkable-input.--with-border>.mz-checkable-input__input:not(:checked):not(:disabled)+.mz-checkable-input__container:hover {
+  border-color: #ededed !important;
+}
+@media screen and (min-width:1024px) {
+  .awm-img-pay-card-desk {
+    display: flex !important; 
+  }
+  .awm-img-pay-card-mb{
+    display: none !important;
+  }
+}
+@media screen and (max-width:1023px) {
+  .awm-img-pay-card-desk {
+    display: none !important;
+  }
+  .awm-img-pay-card-mb{
+    display: flex !important;
+  }
+}

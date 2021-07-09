@@ -1,0 +1,51 @@
+@import '../Common/variables.less';
+
+.mz-cart-value-row {
+  display: flex;
+  align-items: center;
+
+  &:not(:first-child) {
+    margin-top: @spacing[xs];
+  }
+
+  &.--red {
+    color: @colors[red-200];
+  }
+
+  &.--grey {
+    color: @colors[grey-300];
+  }
+
+  &__title {
+    flex: 1;
+    margin-right: @spacing[xs];
+
+    @media screen and (min-width: @cart-desktop-breakpoint) {
+      margin-right: @spacing[s];
+    }
+  }
+
+  &.--no-title-mobile &__title {
+    display: none;
+
+    @media screen and (min-width: @cart-desktop-breakpoint) {
+      display: block;
+    }
+  }
+
+  &__remove-button {
+    // Fix icon got cut in iOS
+    display: flex;
+    align-items: center;
+    height: @font-sizes[body] * 1.5; // line-height;
+    margin-right: @spacing[xs];
+    color: @colors[grey-300];
+    line-height: 1;
+
+    @media (hover: hover) {
+      &:hover {
+        color: @colors[grey-500];
+      }
+    }
+  }
+}

@@ -1,0 +1,192 @@
+/* stylelint-disable property-no-unknown */
+
+@colors: {
+  original-blue: #002f5f;
+  original-blue-dark: #03274c;
+
+  amway-600: #2a3a68;
+  amway-500: #38539a;
+  amway-400: #3f5ba5;
+  amway-300: #667ec1;
+  amway-200: #becce9;
+  amway-100: #f1f2ff;
+
+  black: #2c2c2c;
+
+  grey-600: #3a3a3a;
+  grey-500: #56565a;
+  grey-400: #9ea0a3;
+  grey-300: #c3c4c5;
+  grey-200: #ededed;
+  grey-100: #fafafa;
+
+  white: #ffffff;
+
+  red-300: #7f3e3e;
+  red-200: #cb5454;
+  red-100: #ffe2e2;
+
+  orange-300: #a76c47;
+  orange-200: #e3a780;
+  orange-100: #fff1e8;
+
+  yellow-300: #62625a;
+  yellow-200: #f5f5c9;
+  yellow-100: #f8f8e7;
+
+  success-green: #90c353;
+  green-300: #73793b;
+  green-200: #d5e4c5;
+  green-100: #f0fae5;
+
+  blue-300: #396e75;
+  blue-200: #c2dfe1;
+  blue-100: #e5fdff;
+
+  purple-300: #38539a;
+  purple-200: #c7caf0;
+  purple-100: #f1f2ff;
+};
+
+@bank-colors: {
+  kbank: #30963d;
+  scb: #4c2785;
+  bbl: #101082;
+  bay: #705f5f;
+  ktb: #02a3e4;
+  tmb: #0279c1;
+  uob: #042b7a;
+  tbank: #f46f23;
+};
+
+@font-weights: {
+  text: 400;
+  medium: 500;
+  bold: 700;
+  extra-bold: 800;
+};
+
+@font-sizes: {
+  heading-1: 36px;
+  heading-2: 32px;
+  heading-3: 24px;
+  heading-4: 20px;
+  heading-5: 18px;
+  body: 16px;
+  medium: 14px;
+  small: 13px;
+  extra-small: 10px;
+};
+
+@icon-sizes: {
+  xxs: 12px;
+  xs: 14px;
+  s: 16px;
+  m: 20px;
+  l: 24px;
+  xxl: 40px;
+};
+
+@spacing: {
+  xxs: 4px;
+  xs: 8px;
+  s: 16px;
+  m: 24px;
+  l: 32px;
+  xl: 40px;
+  xxl: 48px;
+  xxxl: 64px;
+  xxxxl: 80px;
+};
+
+@border-radiuses: {
+  xs: 2px;
+  s: 4px;
+  m: 8px;
+};
+
+@gap-sizes: {
+  large: 6px;
+};
+
+@shadows: {
+  xs: 0 2px 4px 0 rgba(@colors[amway-500], 0.1);
+  s: 0 4px 8px -1px rgba(@colors[amway-500], 0.1);
+  m: 0 8px 8px -1px rgba(@colors[amway-500], 0.1);
+  l: 0 8px 16px 1px rgba(@colors[amway-500], 0.1);
+  xl: 0 16px 24px 0 rgba(@colors[amway-500], 0.1);
+  arrow-shadow: 0 2px 16px 2px rgba(@colors[amway-500], 0.1);
+};
+
+@breakpoints: {
+  xs: 375px;
+  sm: 576px;
+  md: 768px;
+  lg: 992px;
+  xl: 1024px;
+};
+
+@z-indexes: {
+  background: -1;
+  ground: 0;
+  step-progress-bar-arrow: 1;
+  step-progress-bar-label: 2;
+  mobile-header: 500;
+  payment-dim-layer: 600;
+  cart-dim-layer: 600;
+  cart-mobile-panel: 601;
+  cart-mobile-detail: 602;
+  cart-mobile-summary: 603;
+  popover: 604;
+  payment-mobile-panel: 610;
+  payment-mobile-detail: 611;
+  payment-mobile-summary: 612;
+  dim-layer: 1000;
+  desktop-header: 1500;
+  popup-menu: 2000;
+  search-modal: 3000;
+  modal-backdrop: 4000;
+  modal: 4001;
+};
+
+@header-z-indexes: {
+  topmost-bar: 0;
+  nav-bar: 1;
+  message-bars: 2;
+};
+
+@content-max-width: 1180px;
+
+@topmost-bar-mobile-height: 48px;
+@topmost-bar-desktop-height: 40px;
+@navigation-bar-desktop-height: 80px;
+@navigation-bar-mobile-height: 54px;
+@menu-bar-height: 56px;
+
+@arrow-size: 12px;
+
+@input-height: 48px;
+@textarea-height: 96px;
+
+@profile-widget-width: 280px;
+
+@mobile-item-height: 64px;
+
+@cart-item-max-width: 700px;
+@cart-tablet-breakpoint: @breakpoints[sm];
+@cart-desktop-breakpoint: @breakpoints[xl];
+
+@button-themes: {
+  // Format: Main color, Text color, Hover color
+  original-blue: @colors[original-blue], @colors[original-blue],
+    @colors[original-blue-dark];
+  orange: @colors[orange-200], @colors[orange-300], @colors[orange-300];
+};
+
+@button-theme-key: main-color, text-color, hover-color;
+
+@button-sizes: {
+  large: 48px;
+  medium: 40px;
+  small: 32px;
+}

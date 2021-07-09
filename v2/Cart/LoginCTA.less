@@ -1,0 +1,21 @@
+@import '../Common/variables.less';
+@import '../Common/mixins.less';
+
+.mz-login-cta {
+  .mz-cart-section();
+  .mz-cart-responsive-padding();
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: @colors[white];
+
+  &__button {
+    flex: 0 0 120px;
+    margin-left: @spacing[m];
+
+    @media screen and (min-width: @cart-desktop-breakpoint) {
+      flex-basis: 136px;
+    }
+  }
+}

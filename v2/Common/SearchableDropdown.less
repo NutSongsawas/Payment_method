@@ -1,0 +1,164 @@
+@import './variables.less';
+@import './mixins.less';
+
+.mz-searchable-dropdown {
+  position: relative;
+  width: 100%;
+  user-select: none;
+
+  &__modal {
+    display: flex;
+    position: fixed;
+    z-index: @z-indexes[modal];
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+    padding: @spacing[s];
+    transform: translate3d(0, -100%, 0);
+    transition: transform 0.3s;
+    background: @colors[white];
+
+    @media screen and (min-width: @breakpoints[xl]) {
+      display: none;
+      position: static;
+      transform: none;
+    }
+  }
+
+  &.open &__modal {
+    transform: translate3d(0, 0, 0);
+
+    @media screen and (min-width: @breakpoints[xl]) {
+      display: block;
+      padding: 0;
+      transform: none;
+    }
+  }
+
+  &__button {
+    .mz-input-like();
+
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &.open &__button {
+    @media screen and (min-width: @breakpoints[xl]) {
+      display: none;
+    }
+  }
+
+  &__button-icon {
+    .mz-input-like-icon();
+  }
+
+  &__button-text {
+    // hack to make it align with input
+    line-height: @font-sizes[body] * 1.5 + 1px;
+  }
+
+  &__icon {
+    .mz-dropdown-icon();
+  }
+
+  &.open &__icon {
+    transform: scaleY(-1);
+  }
+
+  &.open &__input &__icon {
+    display: none;
+
+    @media screen and (min-width: @breakpoints[xl]) {
+      display: block;
+    }
+  }
+
+  &__menu {
+    position: static;
+    flex: 1;
+    overflow: auto;
+
+    label {
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: @breakpoints[xl]) {
+      z-index: @z-indexes[popup-menu];
+      width: auto;
+      min-width: auto;
+      padding: 0;
+
+      .DEPRECATEDmz-dropdown-menu();
+    }
+  }
+
+  &__result-header {
+    padding: @spacing[s] 0;
+    color: @colors[grey-400];
+    .mz-font-style(small);
+
+    @media screen and (min-width: @breakpoints[xl]) {
+      padding: @spacing[s];
+    }
+  }
+
+  &__close-button {
+    display: block;
+    margin-bottom: @spacing[s];
+    margin-left: auto;
+    padding: @spacing[xs];
+    line-height: 1;
+
+    @media screen and (min-width: @breakpoints[xl]) {
+      display: none;
+    }
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: @spacing[s] 0;
+    border-bottom: solid 1px @colors[grey-200];
+
+    @media screen and (min-width: @breakpoints[xl]) {
+      .DEPRECATEDmz-dropdown-option();
+
+      &:not(:last-child) {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &__option-input {
+    .mz-hidden-input();
+  }
+
+  &__option-image {
+    width: 32px;
+    height: 32px;
+    margin-right: @spacing[s];
+  }
+
+  &__check-icon {
+    visibility: hidden;
+    margin-left: @spacing[s];
+    color: @colors[original-blue];
+  }
+
+  &__option-input:checked ~ &__check-icon {
+    visibility: visible;
+  }
+
+  h6 + & {
+    margin-top: @spacing[s];
+  }
+
+  &__footer:empty {
+    padding-bottom: @spacing[m];
+  }
+}

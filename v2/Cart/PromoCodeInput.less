@@ -1,0 +1,41 @@
+@import '../Common/variables.less';
+@import '../Common/mixins.less';
+
+.mz-promo-code-input {
+  .mz-input-group();
+
+  &__button {
+    flex: 0 0 94px;
+  }
+
+  &__error {
+    display: none;
+
+    &.--active {
+      display: block;
+    }
+  }
+
+  &.--mobile,
+  &.--mobile ~ &__error {
+    @media screen and (min-width: @cart-desktop-breakpoint) {
+      display: none;
+    }
+  }
+
+  &.--desktop {
+    display: none;
+
+    @media screen and (min-width: @cart-desktop-breakpoint) {
+      display: flex;
+    }
+  }
+
+  &.--desktop ~ &__error.--active {
+    display: none;
+
+    @media screen and (min-width: @cart-desktop-breakpoint) {
+      display: block;
+    }
+  }
+}

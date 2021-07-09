@@ -1,0 +1,52 @@
+@import '../Common/mixins.less';
+
+.mz-cart-item-label {
+  @label-height: 24px;
+
+  display: inline-block;
+  max-width: 100%;
+  height: @label-height;
+  padding: 0 @spacing[xs];
+  overflow: hidden;
+  border-radius: @border-radiuses[s];
+  line-height: @label-height;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  .mz-font-style(small);
+
+  &.--backOrder {
+    background: @colors[orange-100];
+    color: @colors[orange-300];
+  }
+
+  &.--nearlyOut {
+    background: @colors[red-100];
+    color: @colors[red-300];
+  }
+
+  &.--deliveryUnavailable,
+  &.--tempUnavailable {
+    background: @colors[grey-200];
+    color: @colors[grey-400];
+  }
+
+  &.--instalment {
+    background: @colors[yellow-100];
+    color: @colors[yellow-300];
+  }
+
+  &.--redeemed {
+    background: @colors[blue-200];
+    color: @colors[blue-300];
+  }
+
+  > * {
+    vertical-align: top;
+  }
+
+  &__icon {
+    margin-right: @spacing[xs];
+  }
+}
